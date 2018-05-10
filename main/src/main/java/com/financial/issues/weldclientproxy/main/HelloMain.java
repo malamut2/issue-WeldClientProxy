@@ -12,7 +12,7 @@ public class HelloMain {
 
     public void sayHello() {
         lib.sayHello();
-        System.out.println("Lib says: Hello World!");
+        System.out.println("Main says: Hello World!");
     }
 
 }

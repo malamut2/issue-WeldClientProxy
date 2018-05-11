@@ -3,6 +3,8 @@ module main {
     requires tools;
     requires javax.inject;
     requires weld.se.core;
+    requires weld.environment.common;
+    requires weld.core.impl;
     exports com.financial.issues.weldclientproxy.main;
     opens com.financial.issues.weldclientproxy.main;
 }

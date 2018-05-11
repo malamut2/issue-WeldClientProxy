@@ -70,4 +70,29 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>  <!-- plugin for tests updated for Java modules -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.21.0</version>
+                <configuration>
+                    <argLine>--add-opens=java.base/jdk.internal.loader=ALL-UNNAMED --illegal-access=permit</argLine>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                        <version>6.1.1</version>  <!-- originally referenced ASM version is broken for Java 10 -->
+                    </dependency>
+                    <dependency>
+                        <groupId>org.junit.platform</groupId>
+                        <artifactId>junit-platform-surefire-provider</artifactId>
+                        <version>1.2.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
